@@ -6,6 +6,10 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="background-color-transparent" padding (click) = "takePicture()">
-
+<ion-content class="background-color-transparent" padding>
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="takePicture()">
+      <ion-icon name="md-camera"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>

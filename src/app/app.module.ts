@@ -7,6 +7,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { Diagnostic } from '@ionic-native/diagnostic';
+import {CameraPreview, CameraPreviewOptions} from "@ionic-native/camera-preview";
+import {AndroidFullScreen} from '@ionic-native/android-full-screen';
+import { IonicStorageModule } from '@ionic/storage';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -24,6 +29,10 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
+    Diagnostic,
+    CameraPreview,
+    SplashScreen,
+    AndroidFullScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
