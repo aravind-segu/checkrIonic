@@ -47,8 +47,8 @@ export class HomePage {
       quality: 50
     }
     this.cameraPreview.takePicture().then((imageData) => {
-      console.log(imageData);
-
+      //console.log(imageData.toDataURL())
+      this.azureProvider.sendImage(imageData)
     });
   }
 }
