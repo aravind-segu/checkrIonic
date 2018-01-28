@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -11,6 +12,7 @@ import { Diagnostic } from '@ionic-native/diagnostic';
 import {CameraPreview, CameraPreviewOptions} from "@ionic-native/camera-preview";
 import {AndroidFullScreen} from '@ionic-native/android-full-screen';
 import { IonicStorageModule } from '@ionic/storage';
+import { AzureProvider } from '../providers/azure/azure';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { IonicStorageModule } from '@ionic/storage';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -33,7 +36,8 @@ import { IonicStorageModule } from '@ionic/storage';
     CameraPreview,
     SplashScreen,
     AndroidFullScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AzureProvider
   ]
 })
 export class AppModule {}

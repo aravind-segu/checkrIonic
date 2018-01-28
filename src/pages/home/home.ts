@@ -3,6 +3,7 @@ import {NavController, ToastController, PopoverController, LoadingController} fr
 import { Diagnostic } from '@ionic-native/diagnostic';
 import {CameraPreview, CameraPreviewOptions, CameraPreviewPictureOptions} from "@ionic-native/camera-preview";
 import {AndroidFullScreen} from '@ionic-native/android-full-screen'
+import {AzureProvider} from '../../providers/azure/azure'
 
 @Component({
   selector: 'page-home',
@@ -13,7 +14,8 @@ export class HomePage {
   constructor(public toastCtrl: ToastController,
               public diagnostic:Diagnostic,
               public cameraPreview: CameraPreview,
-              public androidFullScreen: AndroidFullScreen) {
+              public androidFullScreen: AndroidFullScreen,
+              public azureProvider: AzureProvider) {
     this.androidFullScreen.isImmersiveModeSupported().then(() => this.androidFullScreen.immersiveMode())
       .catch((error:any) => console.log(error));
     this.initializePreview()
@@ -44,6 +46,9 @@ export class HomePage {
       height: 500,
       quality: 50
     }
-    this.cameraPreview.takePicture();
+    this.cameraPreview.takePicture().then((imageData) => {
+      console.log(imageData);
+
+    });
   }
 }
