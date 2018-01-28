@@ -1,0 +1,11 @@
+<ion-content class="masters">
+  <ion-list>
+    <ion-list-header>
+      <b>Spelling Mistakes We Found</b>
+    </ion-list-header>
+    <ion-item *ngFor="let item of items">
+      <h2>{{item.name}}</h2>
+      <p>Suggestions: {{item.sug1}}, {{item.sug2}}, {{item.sug3}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,3 +1,43 @@
 page-home {
-
+  .area{
+    border-color: red;
+    border-width: 50px;
+    display:block;
+    position:absolute;
+    width: 0px;
+    height: 0px;
+    left: 217px;
+    bottom: 189px;
+    color: red;
+    background-color: red;
+    opacity: 0.5;
+  }
+  .areaTwo{
+    border-color: red;
+    border-width: 50px;
+    display:block;
+    position:absolute;
+    width: 0px;
+    height: 0px;
+    left: 395px;
+    bottom: 100px;
+    color: red;
+    background-color: green;
+    opacity: 0.5;
+  }
+  .image{
+    z-index: -1;
+  }
+}
+.area{
+  border-color: red;
+  border-width: 5px;
+  display:block;
+  width: 250px;
+  height: 100px;
+  left: 245px;
+  bottom: 275px;
+}
+.image{
+  z-index: -1;
 }
